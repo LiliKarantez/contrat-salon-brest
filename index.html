@@ -3,1274 +3,768 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>1er Salon de la Rencontre Célibataire — Brest 14 & 15 novembre 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bai+Jamjuree:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Contrat d’Engagement — Salon de la Rencontre Célibataire — Brest 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bai+Jamjuree:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --violet: #9B59B6;
     --fuchsia: #E91E8C;
     --turquoise: #00BCD4;
-    --ink: #1a1a2e;
     --white: #FAFAFA;
+    --ink: #1a1a2e;
+    --soft: #f0eaf6;
     --border: #d4b8e8;
-    --soft: #f5eeff;
+    --success: #27ae60;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Bai Jamjuree', sans-serif; background: var(--white); color: var(--ink); }
-
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(26,26,46,0.95);
-    backdrop-filter: blur(10px);
-    padding: 0 40px;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 60px;
-    border-bottom: 1px solid rgba(155,89,182,0.2);
-  }
-  .nav-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    color: #e8c5f5;
-    letter-spacing: 0.05em;
-  }
-  .nav-links { display: flex; gap: 28px; }
-  .nav-links a {
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(250,250,250,0.6);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--turquoise); }
-  .nav-cta {
-    background: linear-gradient(90deg, var(--violet), var(--fuchsia));
-    color: white !important;
-    padding: 8px 18px;
-    border-radius: 3px;
-    font-size: 0.7rem !important;
-    font-weight: 600 !important;
-  }
-  .nav-cta:hover { opacity: 0.9; }
+  body { font-family: 'Bai Jamjuree', sans-serif; background: var(--white); color: var(--ink); min-height: 100vh; }
 
   .hero {
-    min-height: 100vh;
-    background: linear-gradient(160deg, #0d0d1a 0%, #1a1a2e 40%, #2d1b4e 70%, #1a1a2e 100%);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #1a1a2e 100%);
+    padding: 60px 40px 50px;
     text-align: center;
-    padding: 100px 24px 80px;
     position: relative;
     overflow: hidden;
   }
   .hero::before {
     content: '';
     position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse at 20% 50%, rgba(155,89,182,0.2) 0%, transparent 55%),
-      radial-gradient(ellipse at 80% 30%, rgba(233,30,140,0.12) 0%, transparent 55%),
-      radial-gradient(ellipse at 50% 80%, rgba(0,188,212,0.08) 0%, transparent 50%);
+    background: radial-gradient(ellipse at 30% 50%, rgba(155,89,182,0.25) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 50%, rgba(233,30,140,0.15) 0%, transparent 60%);
   }
-  .hero-kicker {
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--turquoise);
-    margin-bottom: 24px;
-    position: relative;
-  }
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.8rem, 6vw, 5rem);
-    font-weight: 300;
-    color: white;
-    line-height: 1.1;
-    position: relative;
-    margin-bottom: 12px;
-  }
+  .hero-label { font-family: 'Bai Jamjuree', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: var(--turquoise); margin-bottom: 18px; position: relative; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; color: var(--white); line-height: 1.15; position: relative; margin-bottom: 10px; }
   .hero h1 em { font-style: italic; color: #e8c5f5; }
-  .hero-date {
-    font-size: 0.82rem;
-    color: rgba(250,250,250,0.5);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    position: relative;
-    margin-top: 20px;
-  }
-  .hero-tagline {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1rem, 2vw, 1.35rem);
-    font-style: italic;
-    color: rgba(250,250,250,0.7);
-    position: relative;
-    margin-top: 28px;
-    max-width: 600px;
-    line-height: 1.6;
-  }
-  .hero-badges {
-    display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
-    margin-top: 40px; position: relative;
-  }
-  .badge {
-    padding: 8px 20px;
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 2px;
-    font-size: 0.72rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(250,250,250,0.7);
-  }
-  .badge.highlight { border-color: rgba(233,30,140,0.5); color: #f9a8d4; }
-  .hero-cta {
-    margin-top: 50px;
-    display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
-    position: relative;
-  }
-  .btn-main {
-    display: inline-block;
-    padding: 16px 40px;
-    background: linear-gradient(90deg, var(--violet), var(--fuchsia));
-    color: white;
-    text-decoration: none;
-    font-family: 'Bai Jamjuree', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    border-radius: 3px;
-    box-shadow: 0 8px 30px rgba(155,89,182,0.4);
-    transition: all 0.2s;
-  }
-  .btn-main:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(155,89,182,0.5); }
-  .btn-ghost {
-    display: inline-block;
-    padding: 16px 40px;
-    border: 1px solid rgba(255,255,255,0.2);
-    color: rgba(255,255,255,0.7);
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    border-radius: 3px;
-    transition: all 0.2s;
-  }
-  .btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: white; }
+  .hero-sub { font-size: 0.85rem; color: rgba(250,250,250,0.65); letter-spacing: 0.08em; position: relative; margin-top: 14px; }
+  .hero-accent { display: inline-block; margin-top: 22px; padding: 6px 22px; border: 1px solid rgba(233,30,140,0.5); border-radius: 2px; font-size: 0.75rem; letter-spacing: 0.2em; color: rgba(250,250,250,0.8); position: relative; }
 
-  .scroll-ind {
-    position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 8px;
-    color: rgba(255,255,255,0.3);
-    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
-  }
-  .scroll-ind::after {
-    content: '';
-    width: 1px; height: 40px;
-    background: linear-gradient(to bottom, rgba(155,89,182,0.6), transparent);
-    animation: scrollPulse 2s ease-in-out infinite;
-  }
-  @keyframes scrollPulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
+  .wrapper { max-width: 780px; margin: 0 auto; padding: 50px 24px 80px; }
 
-  section { padding: 90px 24px; }
-  .container { max-width: 960px; margin: 0 auto; }
+  .steps { display: flex; gap: 0; margin-bottom: 48px; border-bottom: 1px solid var(--border); }
+  .step-tab { flex: 1; padding: 14px 10px; text-align: center; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #aaa; border-bottom: 2px solid transparent; cursor: default; transition: all 0.3s; }
+  .step-tab.active { color: var(--violet); border-bottom-color: var(--violet); }
+  .step-tab.done { color: var(--success); border-bottom-color: var(--success); }
 
-  .section-label {
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--violet);
-    margin-bottom: 14px;
-  }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 300;
-    line-height: 1.15;
-    margin-bottom: 20px;
-  }
-  .section-title em { font-style: italic; color: var(--violet); }
-  .section-lead {
-    font-size: 0.92rem;
-    line-height: 1.8;
-    color: #444;
-    max-width: 640px;
-  }
+  .section { display: none; animation: fadeIn 0.4s ease; }
+  .section.active { display: block; }
+  @keyframes fadeIn { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: translateY(0); } }
 
-  .concept { background: white; }
-  .concept-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-    margin-top: 56px;
-  }
-  @media(max-width:700px){ .concept-grid { grid-template-columns: 1fr; gap: 40px; } }
-  .concept-text p {
-    font-size: 0.9rem;
-    line-height: 1.9;
-    color: #444;
-    margin-bottom: 18px;
-  }
-  .concept-text p:last-child { margin-bottom: 0; }
-  .concept-visual {
-    background: linear-gradient(135deg, #1a1a2e, #2d1b4e);
-    border-radius: 8px;
-    padding: 40px;
-    text-align: center;
-  }
-  .concept-visual .big-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 5rem;
-    font-weight: 300;
-    color: white;
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-  .concept-visual .big-label {
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(250,250,250,0.5);
-    margin-bottom: 28px;
-  }
-  .stat-row {
-    display: flex;
-    justify-content: space-around;
-    padding-top: 24px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-  .stat { text-align: center; }
-  .stat .val {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    font-weight: 400;
-    color: #e8c5f5;
-  }
-  .stat .lbl {
-    font-size: 0.68rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(250,250,250,0.4);
-    margin-top: 4px;
-  }
+  .section-header { margin-bottom: 32px; }
+  .section-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--ink); margin-bottom: 6px; }
+  .section-header h2 span { color: var(--violet); }
+  .section-header p { font-size: 0.82rem; color: #666; line-height: 1.6; }
 
-  .pourquoi { background: var(--soft); }
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 52px;
+  .field-group { margin-bottom: 28px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 600px) { .field-row { grid-template-columns: 1fr; } }
+  label { display: block; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); margin-bottom: 7px; }
+  label .req { color: var(--fuchsia); margin-left: 2px; }
+  input[type=text], input[type=email], input[type=tel], textarea, select {
+    width: 100%; padding: 12px 16px; border: 1px solid var(--border); border-radius: 4px;
+    font-family: 'Bai Jamjuree', sans-serif; font-size: 0.88rem; color: var(--ink);
+    background: #fff; transition: border-color 0.2s, box-shadow 0.2s; outline: none; -webkit-appearance: none;
   }
-  @media(max-width:800px){ .cards-grid { grid-template-columns: 1fr; } }
-  .card {
-    background: white;
-    border-radius: 8px;
-    padding: 32px 28px;
-    border: 1px solid var(--border);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(155,89,182,0.12); }
-  .card-icon {
-    width: 44px; height: 44px;
-    background: linear-gradient(135deg, var(--violet), var(--fuchsia));
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 20px;
-    font-size: 1.3rem;
-  }
-  .card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: var(--ink);
-  }
-  .card p { font-size: 0.82rem; line-height: 1.7; color: #555; }
+  input:focus, textarea:focus, select:focus { border-color: var(--violet); box-shadow: 0 0 0 3px rgba(155,89,182,0.12); }
+  textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
 
-  .programme { background: white; }
-  .prog-cols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    margin-top: 52px;
-  }
-  @media(max-width:700px){ .prog-cols { grid-template-columns: 1fr; } }
-  .prog-day-label {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--fuchsia);
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border);
-  }
-  .timeline {
-    position: relative;
-    padding-left: 28px;
-    border-left: 2px solid var(--border);
-  }
-  .timeline-item {
-    margin-bottom: 28px;
-    position: relative;
-  }
-  .timeline-item::before {
-    content: '';
-    width: 10px; height: 10px;
-    background: var(--violet);
-    border-radius: 50%;
-    position: absolute;
-    left: -34px; top: 5px;
-    border: 2px solid white;
-    box-shadow: 0 0 0 2px var(--violet);
-  }
-  .timeline-time {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--violet);
-    margin-bottom: 4px;
-  }
-  .timeline-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 3px;
-  }
-  .timeline-desc { font-size: 0.8rem; line-height: 1.6; color: #666; }
+  .tarif-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 24px; }
+  .tarif-card-header { background: linear-gradient(90deg, var(--violet), var(--fuchsia)); padding: 14px 22px; color: white; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.05em; }
+  .tarif-options { padding: 20px; display: flex; flex-direction: column; gap: 12px; background: #fff; }
+  .tarif-option { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border: 1.5px solid var(--border); border-radius: 6px; cursor: pointer; transition: all 0.2s; }
+  .tarif-option:hover { border-color: var(--violet); background: #faf5ff; }
+  .tarif-option.selected { border-color: var(--violet); background: #f5eeff; }
+  .tarif-option input[type=radio] { display: none; }
+  .tarif-radio-dot { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s; }
+  .tarif-option.selected .tarif-radio-dot { border-color: var(--violet); background: var(--violet); }
+  .tarif-option.selected .tarif-radio-dot::after { content: ''; width: 7px; height: 7px; background: white; border-radius: 50%; }
+  .tarif-label { flex: 1; }
+  .tarif-label strong { display: block; font-size: 0.88rem; font-weight: 500; color: var(--ink); }
+  .tarif-label span { font-size: 0.78rem; color: #888; }
+  .tarif-price-opt { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--violet); }
+  .tarif-note { font-size: 0.75rem; color: #888; padding: 0 20px 16px; font-style: italic; }
 
-  .conferences { background: var(--soft); }
-  .conf-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-top: 40px;
-  }
-  @media(max-width:700px){ .conf-grid { grid-template-columns: 1fr; } }
-  .conf-day {
-    background: white;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    overflow: hidden;
-  }
-  .conf-day-head {
-    background: linear-gradient(90deg, var(--violet), var(--fuchsia));
-    padding: 14px 20px;
-    color: white;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-  }
-  .conf-day-head.dark { background: linear-gradient(90deg, #1a1a2e, #2d1b4e); }
-  .conf-slots { padding: 18px 20px; }
-  .conf-slot {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(155,89,182,0.08);
-  }
-  .conf-slot:last-child { border-bottom: none; }
-  .conf-time {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--violet);
-    min-width: 48px;
-    letter-spacing: 0.05em;
-  }
-  .conf-label {
-    font-size: 0.8rem;
-    color: #666;
-  }
-  .conf-avail {
-    margin-left: auto;
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--turquoise);
-  }
-  .conf-note {
-    margin-top: 20px;
-    font-size: 0.78rem;
-    color: #888;
-    font-style: italic;
-    line-height: 1.6;
-  }
+  .total-box { background: linear-gradient(135deg, #1a1a2e, #2d1b4e); border-radius: 8px; padding: 24px 28px; display: flex; justify-content: space-between; align-items: center; margin: 28px 0; }
+  .total-box .total-label { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(250,250,250,0.65); }
+  .total-box .total-amount { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 600; color: white; }
+  .total-box .total-amount span { font-size: 1rem; font-weight: 300; color: rgba(250,250,250,0.7); margin-left: 4px; }
 
-  .tarifs { background: white; }
-  .tarif-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 40px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 20px rgba(155,89,182,0.08);
-  }
-  .tarif-table thead tr {
-    background: linear-gradient(90deg, var(--violet), var(--fuchsia));
-    color: white;
-  }
-  .tarif-table th {
-    padding: 16px 20px;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    text-align: left;
-  }
-  .tarif-table th:last-child { text-align: right; }
-  .tarif-table td {
-    padding: 16px 20px;
-    font-size: 0.85rem;
-    color: var(--ink);
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
-  }
-  .tarif-table td:last-child { text-align: right; font-weight: 600; color: var(--violet); }
-  .tarif-table tbody tr:nth-child(even) { background: var(--soft); }
-  .tarif-table tbody tr:last-child td { border-bottom: none; }
-  .tarif-table .tarif-sub {
-    font-size: 0.75rem;
-    color: #888;
-    margin-top: 3px;
-  }
-  .tarif-price {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--violet);
-    white-space: nowrap;
-  }
+  .conf-toggle { display: flex; align-items: center; gap: 14px; padding: 18px 20px; border: 1.5px solid var(--border); border-radius: 6px; cursor: pointer; margin-bottom: 20px; transition: border-color 0.2s; }
+  .conf-toggle:hover { border-color: var(--fuchsia); }
+  .conf-toggle.active { border-color: var(--fuchsia); background: #fff5fb; }
+  .toggle-switch { width: 42px; height: 22px; background: #ddd; border-radius: 11px; position: relative; transition: background 0.2s; flex-shrink: 0; }
+  .toggle-switch::after { content: ''; width: 16px; height: 16px; background: white; border-radius: 50%; position: absolute; top: 3px; left: 3px; transition: transform 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+  .conf-toggle.active .toggle-switch { background: var(--fuchsia); }
+  .conf-toggle.active .toggle-switch::after { transform: translateX(20px); }
+  .conf-extra { display: none; }
+  .conf-extra.visible { display: block; animation: fadeIn 0.3s ease; }
 
-  .conf-tarif {
-    margin-top: 28px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .conf-tarif-head {
-    background: linear-gradient(90deg, #1a1a2e, #2d1b4e);
-    padding: 16px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .conf-tarif-head h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: white;
-  }
-  .conf-tarif-head .price {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    color: #e8c5f5;
-    font-weight: 300;
-  }
-  .conf-tarif-body {
-    padding: 18px 24px;
-    font-size: 0.82rem;
-    color: #555;
-    line-height: 1.8;
-    background: var(--soft);
-  }
-  .tarif-tva {
-    margin-top: 20px;
-    font-size: 0.78rem;
-    color: #888;
-    font-style: italic;
-  }
-  .tarif-annulation {
-    margin-top: 16px;
-    padding: 16px 20px;
-    background: rgba(155,89,182,0.06);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    font-size: 0.8rem;
-    color: #555;
-    line-height: 1.7;
-  }
+  .flyer-toggle { display: flex; align-items: center; gap: 14px; padding: 18px 20px; border: 1.5px solid var(--border); border-radius: 6px; cursor: pointer; margin-bottom: 20px; transition: border-color 0.2s; }
+  .flyer-toggle:hover { border-color: var(--turquoise); }
+  .flyer-toggle.active { border-color: var(--turquoise); background: #f0fbfc; }
+  .flyer-toggle.active .toggle-switch { background: var(--turquoise); }
+  .flyer-toggle.active .toggle-switch::after { transform: translateX(20px); }
 
-  .lieu { background: #1a1a2e; }
-  .lieu .section-title { color: white; }
-  .lieu .section-title em { color: #e8c5f5; }
-  .lieu .section-label { color: var(--turquoise); }
-  .lieu-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    margin-top: 52px;
-    align-items: start;
-  }
-  @media(max-width:700px){ .lieu-grid { grid-template-columns: 1fr; } }
-  .lieu-info p { font-size: 0.88rem; line-height: 1.9; color: rgba(250,250,250,0.65); }
-  .lieu-detail {
-    display: flex; gap: 14px; align-items: flex-start;
-    margin-bottom: 18px;
-  }
-  .lieu-detail-icon {
-    width: 36px; height: 36px; flex-shrink: 0;
-    background: rgba(155,89,182,0.15);
-    border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1rem;
-  }
-  .lieu-detail-text strong { display: block; font-size: 0.78rem; color: rgba(250,250,250,0.5); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px; }
-  .lieu-detail-text span { font-size: 0.88rem; color: rgba(250,250,250,0.85); line-height: 1.5; }
-  .lieu-map {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 8px;
-    overflow: hidden;
-    height: 280px;
-  }
-  .lieu-map iframe { width: 100%; height: 100%; border: none; }
+  .article-block { border-left: 3px solid var(--border); padding: 16px 20px; margin-bottom: 16px; background: #faf8fc; border-radius: 0 6px 6px 0; }
+  .article-block h4 { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; color: var(--violet); margin-bottom: 8px; letter-spacing: 0.03em; }
+  .article-block p { font-size: 0.8rem; line-height: 1.7; color: #444; }
+  .articles-container { max-height: 400px; overflow-y: auto; padding-right: 8px; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
 
-  .lili-section { background: white; }
-  .lili-grid {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 52px;
-    align-items: start;
-    margin-top: 52px;
-  }
-  @media(max-width:700px){ .lili-grid { grid-template-columns: 1fr; } }
-  .lili-avatar {
-    width: 180px; height: 180px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--violet), var(--fuchsia));
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 4rem;
-    color: white;
-    font-weight: 300;
-    font-style: italic;
-    flex-shrink: 0;
-  }
-  .lili-text p { font-size: 0.9rem; line-height: 1.9; color: #444; margin-bottom: 16px; }
-  .lili-text p:last-child { margin-bottom: 0; }
-  .lili-tags {
-    display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px;
-  }
-  .lili-tag {
-    padding: 5px 14px;
-    background: var(--soft);
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--violet);
-  }
+  .checkbox-field { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 18px; }
+  .checkbox-field input[type=checkbox] { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--violet); flex-shrink: 0; cursor: pointer; }
+  .checkbox-field label { font-size: 0.82rem; font-weight: 400; letter-spacing: 0; text-transform: none; line-height: 1.6; color: #444; cursor: pointer; }
 
-  .cta-final {
-    background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #1a1a2e 100%);
-    text-align: center;
-    padding: 100px 24px;
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-final::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 50%, rgba(155,89,182,0.2) 0%, transparent 60%);
-  }
-  .cta-final h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 300;
-    color: white;
-    position: relative;
-    margin-bottom: 14px;
-  }
-  .cta-final h2 em { font-style: italic; color: #e8c5f5; }
-  .cta-final p { font-size: 0.88rem; color: rgba(250,250,250,0.55); position: relative; margin-bottom: 40px; line-height: 1.7; }
-  .cta-final .btn-main { position: relative; font-size: 0.85rem; padding: 18px 50px; }
+  .sig-wrapper { border: 1.5px solid var(--border); border-radius: 6px; overflow: hidden; margin-bottom: 8px; background: #fff; position: relative; }
+  .sig-wrapper canvas { display: block; touch-action: none; cursor: crosshair; }
+  .sig-clear { position: absolute; top: 8px; right: 10px; font-size: 0.7rem; color: #aaa; cursor: pointer; letter-spacing: 0.1em; text-transform: uppercase; }
+  .sig-clear:hover { color: var(--fuchsia); }
+  .sig-hint { font-size: 0.75rem; color: #aaa; font-style: italic; margin-bottom: 20px; }
 
-  footer {
-    background: #0d0d1a;
-    padding: 36px 24px;
-    text-align: center;
-  }
-  .footer-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    color: #e8c5f5;
-    margin-bottom: 8px;
-  }
-  .footer-info { font-size: 0.75rem; color: rgba(250,250,250,0.4); line-height: 1.8; }
-  .footer-info a { color: rgba(250,250,250,0.5); text-decoration: none; }
-  .footer-social {
-    display: flex; justify-content: center; gap: 14px; margin-top: 18px;
-  }
-  .footer-social a {
-    display: inline-flex; align-items: center; gap: 7px;
-    padding: 7px 16px;
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 3px;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(250,250,250,0.5);
-    text-decoration: none;
-    transition: all 0.2s;
-  }
-  .footer-social a:hover { border-color: var(--violet); color: var(--violet); }
-  .footer-slogan {
-    margin-top: 20px;
-    font-size: 0.7rem;
-    color: rgba(250,250,250,0.2);
-    letter-spacing: 0.15em;
-    font-style: italic;
-  }
+  .btn-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--border); }
+  .btn { padding: 13px 32px; border: none; border-radius: 4px; font-family: 'Bai Jamjuree', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; }
+  .btn-primary { background: linear-gradient(90deg, var(--violet), var(--fuchsia)); color: white; box-shadow: 0 4px 15px rgba(155,89,182,0.35); }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(155,89,182,0.45); }
+  .btn-secondary { background: transparent; color: var(--violet); border: 1px solid var(--border); }
+  .btn-secondary:hover { border-color: var(--violet); }
 
-  @media(max-width:600px){
-    nav { padding: 0 16px; }
-    .nav-links { display: none; }
-    .conf-grid { grid-template-columns: 1fr; }
-    .tarif-table { font-size: 0.8rem; }
-  }
+  .success-screen { display: none; text-align: center; padding: 60px 20px; animation: fadeIn 0.5s ease; }
+  .success-screen.visible { display: block; }
+  .success-icon { width: 72px; height: 72px; background: linear-gradient(135deg, var(--violet), var(--fuchsia)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; font-size: 2rem; }
+  .success-screen h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; margin-bottom: 14px; }
+  .success-screen p { font-size: 0.88rem; color: #666; line-height: 1.7; }
 
-  /* BULLE CONTACT */
-  .contact-bubble {
-    position: fixed;
-    bottom: 28px;
-    right: 28px;
-    z-index: 200;
-  }
-  .contact-btn {
-    width: 56px; height: 56px;
-    background: linear-gradient(135deg, var(--violet), var(--fuchsia));
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 6px 24px rgba(155,89,182,0.45);
-    transition: transform 0.2s, box-shadow 0.2s;
-    color: white;
-    font-size: 1.4rem;
-  }
-  .contact-btn:hover { transform: scale(1.08); box-shadow: 0 10px 32px rgba(155,89,182,0.55); }
-  .contact-panel {
-    position: absolute;
-    bottom: 68px;
-    right: 0;
-    width: 320px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 16px 48px rgba(0,0,0,0.15);
-    border: 1px solid var(--border);
-    overflow: hidden;
-    display: none;
-    transform-origin: bottom right;
-  }
-  .contact-panel.open { display: block; animation: panelIn 0.2s ease; }
-  @keyframes panelIn { from{opacity:0;transform:scale(0.92)} to{opacity:1;transform:scale(1)} }
-  .contact-panel-head {
-    background: linear-gradient(90deg, var(--violet), var(--fuchsia));
-    padding: 16px 20px;
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .contact-panel-head h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: white;
-  }
-  .contact-close {
-    background: none; border: none; color: rgba(255,255,255,0.7);
-    cursor: pointer; font-size: 1.2rem; line-height: 1;
-  }
-  .contact-form { padding: 20px; }
-  .contact-field {
-    margin-bottom: 12px;
-  }
-  .contact-field input,
-  .contact-field textarea {
-    width: 100%;
-    padding: 10px 14px;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    font-family: 'Bai Jamjuree', sans-serif;
-    font-size: 0.82rem;
-    color: var(--ink);
-    background: var(--soft);
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  .contact-field input:focus,
-  .contact-field textarea:focus { border-color: var(--violet); background: white; }
-  .contact-field textarea { height: 80px; resize: none; }
-  .contact-submit {
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(90deg, var(--violet), var(--fuchsia));
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-family: 'Bai Jamjuree', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: opacity 0.2s;
-  }
-  .contact-submit:hover { opacity: 0.88; }
-  .contact-rgpd {
-    font-size: 0.68rem;
-    color: #999;
-    text-align: center;
-    margin-top: 10px;
-    line-height: 1.5;
-  }
-  .contact-confirm {
-    display: none;
-    padding: 24px 20px;
-    text-align: center;
-    font-size: 0.88rem;
-    color: var(--violet);
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1rem;
-  }
-  @media(max-width:600px){
-    .contact-panel { width: calc(100vw - 56px); right: 0; }
-  }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+  .info-tag { display: inline-flex; align-items: center; gap: 8px; background: #f0eaf6; border-radius: 4px; padding: 8px 14px; font-size: 0.78rem; color: var(--violet); margin-bottom: 20px; }
+
+  .radio-inline { display: flex; gap: 16px; flex-wrap: wrap; }
+  .radio-opt { display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85rem; padding: 10px 16px; border: 1.5px solid var(--border); border-radius: 4px; transition: all 0.2s; min-width: 80px; }
+  .radio-opt:hover { border-color: var(--violet); }
+  .radio-opt.selected { border-color: var(--violet); background: #f5eeff; color: var(--violet); font-weight: 500; }
+  .radio-opt input { display: none; }
+
+  .error-msg { color: var(--fuchsia); font-size: 0.75rem; margin-top: 5px; display: none; }
+  .field-error input, .field-error textarea, .field-error select { border-color: var(--fuchsia); }
+  .field-error .error-msg { display: block; }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-brand">Les Cœurs Solitaires</div>
-  <div class="nav-links">
-    <a href="#concept">Le salon</a>
-    <a href="#pourquoi">Exposer</a>
-    <a href="#programme">Programme</a>
-    <a href="#conferences">Conférences</a>
-    <a href="#tarifs">Tarifs</a>
-    <a href="#lieu">Lieu</a>
-    <a href="#lili">L'organisatrice</a>
-    <a href="https://lilikarantez.github.io/contrat-salon-brest/" class="nav-cta">Je réserve ma place</a>
-  </div>
-</nav>
-
-<!-- HERO -->
 <div class="hero">
-  <div class="hero-kicker">Brest &mdash; 14 &amp; 15 novembre 2026</div>
-  <h1>1<sup style="font-size:0.4em;vertical-align:super">er</sup> Salon de la<br><em>Rencontre Célibataire</em></h1>
-  <div class="hero-tagline">&laquo;&nbsp;La rencontre mérite mieux qu'un algorithme.&nbsp;&raquo;</div>
-  <div class="hero-date">Brest Expo &mdash; Parc de Penfeld &mdash; Samedi 14 &amp; Dimanche 15 novembre 2026</div>
-  <div class="hero-badges">
-    <div class="badge">2 jours</div>
-    <div class="badge highlight">Première édition</div>
-    <div class="badge">30 exposants max</div>
-    <div class="badge">400 participants attendus</div>
-    <div class="badge">Grand Ouest</div>
-  </div>
-  <div class="hero-cta">
-    <a href="https://lilikarantez.github.io/contrat-salon-brest/" class="btn-main">Réserver mon emplacement</a>
-    <a href="#concept" class="btn-ghost">Découvrir</a>
-  </div>
-  <div class="scroll-ind">Découvrir</div>
+  <div class="hero-label">Les Cœurs Solitaires</div>
+  <h1>1<sup style="font-size:0.5em;vertical-align:super">er</sup> Salon de la <em>Rencontre Célibataire</em></h1>
+  <div class="hero-sub">Brest Expo — Parc de Penfeld — Samedi 14 &amp; Dimanche 15 novembre 2026</div>
+  <div class="hero-accent">Contrat d’engagement exposant</div>
 </div>
 
-<!-- CONCEPT -->
-<section class="concept" id="concept">
-  <div class="container">
-    <div class="section-label">Le concept</div>
-    <h2 class="section-title">Un événement<br><em>inédit en Grand Ouest</em></h2>
-    <div class="concept-grid">
-      <div class="concept-text">
-        <p>Le 1<sup>er</sup> Salon de la Rencontre Célibataire investit Brest Expo pour deux journées consécutives. Professionnels du bien-être, coachs, thérapeutes, auteurs et créateurs se réunissent autour d'un public ciblé : les cœurs solitaires en quête d'authenticité.</p>
-        <p>Deux jours pour créer du lien, transmettre votre expertise et rencontrer un public engagé qui cherche du sens dans ses relations. Ni une foire, ni un simple marché : un espace de rencontre humaine, conçu avec intention.</p>
-        <p>Des conférences et ateliers sont proposés tout au long du week-end. Les créneaux sont attribués selon l'ordre d'inscription. Chaque exposé dispose d'une heure pour transmettre, partager et marquer les esprits.</p>
-      </div>
-      <div class="concept-visual">
-        <div class="big-num">400<sup style="font-size:0.4em;vertical-align:super">+</sup></div>
-        <div class="big-label">participants attendus sur le week-end</div>
-        <div class="stat-row">
-          <div class="stat">
-            <div class="val">30</div>
-            <div class="lbl">exposants max</div>
-          </div>
-          <div class="stat">
-            <div class="val">2</div>
-            <div class="lbl">jours de salon</div>
-          </div>
-          <div class="stat">
-            <div class="val">11</div>
-            <div class="lbl">conférences</div>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="wrapper">
+
+  <div class="steps">
+    <div class="step-tab active" id="tab-1">1. Exposant</div>
+    <div class="step-tab" id="tab-2">2. Formule</div>
+    <div class="step-tab" id="tab-3">3. Contrat</div>
+    <div class="step-tab" id="tab-4">4. Signature</div>
   </div>
-</section>
 
-<!-- POURQUOI EXPOSER -->
-<section class="pourquoi" id="pourquoi">
-  <div class="container">
-    <div class="section-label">Pourquoi exposer ?</div>
-    <h2 class="section-title">Ce que le salon<br><em>vous apporte</em></h2>
-    <div class="cards-grid">
-      <div class="card">
-        <div class="card-icon">&#127919;</div>
-        <h3>Un public ultra-qualifié</h3>
-        <p>Des célibataires actifs, curieux et ouverts à l'accompagnement. Ils viennent chercher du sens, pas des algorithmes.</p>
+  <form id="mainForm">
+    <input type="hidden" name="access_key" value="d42b8d9d-a52c-4888-a489-5dd59b1b0f5b">
+    <input type="hidden" name="subject" value="Nouvelle inscription — Salon Rencontre Célibataire Brest 14-15 novembre 2026">
+    <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
+    <!-- SECTION 1 -->
+    <div class="section active" id="section-1">
+      <div class="section-header">
+        <h2>Vos <span>informations</span></h2>
+        <p>Renseignez vos coordonnées professionnelles telles qu’elles figureront sur le contrat.</p>
       </div>
-      <div class="card">
-        <div class="card-icon">&#127908;</div>
-        <h3>Une tribune pour votre expertise</h3>
-        <p>Proposez une conférence ou un atelier d'1 heure devant un public dédié, dans un espace équipé. Premiers arrivés, premiers servis.</p>
+      <div class="field-row">
+        <div class="field-group" id="fg-nom">
+          <label>Nom <span class="req">*</span></label>
+          <input type="text" name="nom" placeholder="Nom de famille">
+          <div class="error-msg">Champ obligatoire</div>
+        </div>
+        <div class="field-group" id="fg-prenom">
+          <label>Prénom <span class="req">*</span></label>
+          <input type="text" name="prenom" placeholder="Prénom">
+          <div class="error-msg">Champ obligatoire</div>
+        </div>
       </div>
-      <div class="card">
-        <div class="card-icon">&#128279;</div>
-        <h3>Visibilité et réseau</h3>
-        <p>Communication dédiée dans le programme officiel, présence sur les réseaux Les Cœurs Solitaires (2 500+ membres actifs en Bretagne).</p>
+      <div class="field-group">
+        <label>Nom de l’entreprise / raison sociale</label>
+        <input type="text" name="entreprise" placeholder="Ex. : Cabinet Dupont, Association XYZ…">
       </div>
-      <div class="card">
-        <div class="card-icon">&#129309;</div>
-        <h3>Deux jours de contact</h3>
-        <p>Un week-end entier pour tisser des liens avec votre public et vos futurs partenaires. Une vitrine professionnelle sur la durée.</p>
+      <div class="field-group" id="fg-adresse">
+        <label>Adresse complète <span class="req">*</span></label>
+        <textarea name="adresse" placeholder="Numéro, rue, code postal, ville"></textarea>
+        <div class="error-msg">Champ obligatoire</div>
       </div>
-      <div class="card">
-        <div class="card-icon">&#11088;</div>
-        <h3>Un cadre professionnel</h3>
-        <p>Brest Expo, Parc de Penfeld : un lieu d'exposition reconnu, facilement accessible, doté de toutes les infrastructures nécessaires.</p>
+      <div class="field-row">
+        <div class="field-group" id="fg-telephone">
+          <label>Téléphone <span class="req">*</span></label>
+          <input type="tel" name="telephone" placeholder="06 XX XX XX XX">
+          <div class="error-msg">Champ obligatoire</div>
+        </div>
+        <div class="field-group" id="fg-email">
+          <label>Email <span class="req">*</span></label>
+          <input type="email" name="email" placeholder="votre@email.fr">
+          <div class="error-msg">Email invalide</div>
+        </div>
       </div>
-      <div class="card">
-        <div class="card-icon">&#128227;</div>
-        <h3>Zéro commission</h3>
-        <p>L'organisatrice ne prélève aucun pourcentage sur vos ventes ou prestations. Ce que vous générez vous appartient entièrement.</p>
+      <div class="field-row">
+        <div class="field-group">
+          <label>Site web</label>
+          <input type="text" name="site" placeholder="www.monsite.fr">
+        </div>
+        <div class="field-group" id="fg-siret">
+          <label>SIRET <span class="req">*</span></label>
+          <input type="text" name="siret" placeholder="000 000 000 00000">
+          <div class="error-msg">Champ obligatoire</div>
+        </div>
+      </div>
+      <div class="field-group" id="fg-activite">
+        <label>Descriptif de votre activité <span class="req">*</span></label>
+        <textarea name="activite" placeholder="Décrivez votre activité, vos services, vos produits…" style="min-height:110px;"></textarea>
+        <div class="error-msg">Champ obligatoire</div>
+      </div>
+      <div class="btn-nav">
+        <span></span>
+        <button type="button" class="btn btn-primary" id="btn-step1">Suivant &rarr;</button>
       </div>
     </div>
+
+    <!-- SECTION 2 -->
+    <div class="section" id="section-2">
+      <div class="section-header">
+        <h2>Votre <span>formule</span></h2>
+        <p>Choisissez votre emplacement pour les deux journées. La conférence ou atelier est une option facultative incluse dans votre emplacement.</p>
+      </div>
+
+      <div class="tarif-card">
+        <div class="tarif-card-header">Emplacement exposant — 2 jours (14 &amp; 15 novembre 2026)</div>
+        <div class="tarif-options">
+          <label class="tarif-option" id="opt-197">
+            <input type="radio" name="tarif_stand" value="197">
+            <div class="tarif-radio-dot"></div>
+            <div class="tarif-label">
+              <strong>Emplacement nu</strong>
+              <span>Sans table, sans électricité — vous apportez votre mobilier</span>
+            </div>
+            <div class="tarif-price-opt">197 €</div>
+          </label>
+          <label class="tarif-option" id="opt-227">
+            <input type="radio" name="tarif_stand" value="227">
+            <div class="tarif-radio-dot"></div>
+            <div class="tarif-label">
+              <strong>Emplacement avec électricité</strong>
+              <span>Sans table, avec branchement électrique — vous apportez votre mobilier</span>
+            </div>
+            <div class="tarif-price-opt">227 €</div>
+          </label>
+          <label class="tarif-option" id="opt-247">
+            <input type="radio" name="tarif_stand" value="247">
+            <div class="tarif-radio-dot"></div>
+            <div class="tarif-label">
+              <strong>Emplacement équipé</strong>
+              <span>Avec table 2 m + 2 chaises, sans électricité</span>
+            </div>
+            <div class="tarif-price-opt">247 €</div>
+          </label>
+          <label class="tarif-option" id="opt-277">
+            <input type="radio" name="tarif_stand" value="277">
+            <div class="tarif-radio-dot"></div>
+            <div class="tarif-label">
+              <strong>Emplacement intégral</strong>
+              <span>Avec table 2 m + 2 chaises + branchement électrique</span>
+            </div>
+            <div class="tarif-price-opt">277 €</div>
+          </label>
+        </div>
+        <div class="tarif-note">TVA non applicable — art. 293B du CGI. Petit-déjeuner d’accueil offert les deux jours.</div>
+      </div>
+      <div id="fg-tarif-stand" style="display:none;"><div class="error-msg" style="display:block;color:var(--fuchsia);font-size:0.78rem;margin-bottom:12px;">→ Veuillez sélectionner un emplacement</div></div>
+
+      <!-- FLYERS OPTION -->
+      <div class="conf-toggle" id="flyerToggle" style="border-color:#b2dfdb;">
+        <div class="toggle-switch" id="flyerSwitch"></div>
+        <div>
+          <strong style="font-size:0.88rem;">Distribution de flyers dans les pochettes d&rsquo;accueil &mdash; 57&nbsp;&euro;</strong>
+          <div style="font-size:0.78rem;color:#888;margin-top:4px;line-height:1.6;">Service r&eacute;serv&eacute; aux professionnels ne souhaitant pas tenir un stand. Vos flyers sont glis&eacute;s dans les 400 pochettes remises &agrave; chaque visiteur &agrave; l&rsquo;entr&eacute;e du salon. Une visibilit&eacute; garantie sans &ecirc;tre pr&eacute;sent le jour J.<br>D&eacute;p&ocirc;t : vendredi 13 novembre au Parc des Expositions de 16h &agrave; 17h uniquement &mdash; ou exp&eacute;dition &agrave; vos frais : Lili Karantez<sup>&reg;</sup>, Centre des Affaires Lorient La Base, 1 rue &Eacute;tienne d&rsquo;Orves, 56100 Lorient.</div>
+        </div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#00897B;white-space:nowrap;margin-left:8px;">57&nbsp;&euro;</div>
+      </div>
+      <input type="hidden" name="option_flyers" id="flyerInput" value="non">
+
+      <!-- CONFERENCE OPTION -->
+      <div class="conf-toggle" id="confToggle">
+        <div class="toggle-switch"></div>
+        <div>
+          <strong style="font-size:0.88rem;">Ajouter une conférence ou un atelier (1h)</strong>
+          <div style="font-size:0.78rem;color:#888;margin-top:2px;">Inclus dans votre emplacement — premiers arrivés, premiers servis — 11 créneaux disponibles</div>
+        </div>
+      </div>
+
+      <div class="conf-extra" id="confExtra">
+        <div class="field-group">
+          <label>Journée souhaitée <span class="req">*</span></label>
+          <div class="radio-inline" id="conf-jour-group">
+            <label class="radio-opt" id="ropt-sam">
+              <input type="radio" name="conf_jour" value="Samedi 14 novembre"> Samedi 14
+            </label>
+            <label class="radio-opt" id="ropt-dim">
+              <input type="radio" name="conf_jour" value="Dimanche 15 novembre"> Dimanche 15
+            </label>
+          </div>
+        </div>
+        <div class="field-group" id="fg-creneau-sam" style="display:none;">
+          <label>Créneau souhaité — Samedi</label>
+          <select name="creneau_samedi">
+            <option value="">-- Sélectionner --</option>
+            <option>10h30</option>
+            <option>11h30</option>
+            <option>13h30</option>
+            <option>14h30</option>
+            <option>15h30</option>
+            <option>16h30</option>
+          </select>
+        </div>
+        <div class="field-group" id="fg-creneau-dim" style="display:none;">
+          <label>Créneau souhaité — Dimanche</label>
+          <select name="creneau_dimanche">
+            <option value="">-- Sélectionner --</option>
+            <option>10h30</option>
+            <option>11h30</option>
+            <option>13h30</option>
+            <option>14h30</option>
+            <option>15h30</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Titre de la conférence ou de l’atelier <span class="req">*</span></label>
+          <input type="text" name="conf_titre" placeholder="Titre de votre intervention">
+        </div>
+        <div class="field-group">
+          <label>Descriptif (max 150 mots)</label>
+          <textarea name="conf_descriptif" placeholder="Décrivez votre conférence ou atelier…"></textarea>
+        </div>
+      </div>
+
+
+
+      <!-- TOTAL -->
+      <div class="total-box">
+        <div>
+          <div class="total-label">Total à régler</div>
+          <div style="font-size:0.72rem;color:rgba(250,250,250,0.5);margin-top:3px;">TVA non applicable — art. 293B du CGI</div>
+        </div>
+        <div class="total-amount" id="totalDisplay">0 <span>€</span></div>
+      </div>
+      <input type="hidden" name="total" id="totalInput" value="0">
+
+      <div class="btn-nav">
+        <button type="button" class="btn btn-secondary" id="btn-back1">&larr; Retour</button>
+        <button type="button" class="btn btn-primary" id="btn-step2">Suivant &rarr;</button>
+      </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="section" id="section-3">
+      <div class="section-header">
+        <h2>Le <span>contrat</span></h2>
+        <p>Veuillez lire attentivement les conditions d’engagement avant de signer.</p>
+      </div>
+
+      <div class="articles-container">
+        <div class="article-block">
+          <h4>Article 1 — Objet</h4>
+          <p>Le présent contrat a pour objet la mise à disposition d’un emplacement par l’Organisatrice au bénéfice de l’Exposant, dans le cadre du 1er Salon de la Rencontre Célibataire qui se tiendra à Brest Expo, Parc de Penfeld, Route de Brest, 29820 Guilers. Samedi 14 novembre 2026 de 10h à 18h. Dimanche 15 novembre 2026 de 10h à 17h. Maximum 30 exposants professionnels.</p>
+        </div>
+        <div class="article-block">
+          <h4>Article 2 — Caractéristiques de l’emplacement</h4>
+          <p>L’emplacement est déterminé par l’Organisatrice selon les contraintes de sécurité et la configuration des lieux. La formule choisie détermine l’équipement fourni (table, électricité). Sont inclus dans tous les emplacements : un badge exposant et un petit-déjeuner d’accueil offert les deux jours. L’Organisatrice se réserve le droit de modifier l’emplacement attribué pour des raisons d’organisation, sans que cela ne donne lieu à une indemnisation.</p>
+        </div>
+        <div class="article-block">
+          <h4>Article 3 — Tarifs et modalités de paiement</h4>
+          <p>Emplacement nu : 197 €. Emplacement avec électricité : 227 €. Emplacement équipé : 247 €. Emplacement intégral : 277 €. Conférence ou atelier : inclus dans l’emplacement. TVA non applicable — art. 293B du CGI. Paiement accepté : Wero, chèque à l’ordre de Lili Karantez, virement bancaire (RIB sur demande), paiement en deux fois (modalités à confirmer). Adresse : Lili Karantez®, Centre des Affaires Lorient La Base, 1 rue Étienne d’Orves, 56100 Lorient. SIRET 40149331700069.</p>
+        </div>
+        <div class="article-block">
+          <h4>Article 4 — Obligations de l’Exposant</h4>
+          <p>L’Exposant s’engage à respecter les horaires de montage (8h30), d’ouverture (10h) et de démontage (17h30 le dimanche). Maintenir son stand propre et sécurisé. Respecter les règles de sécurité, de courtoisie tant avec le public qu’avec les autres exposants et le comité d’organisation. Ne vendre que les produits ou services déclarés dans le présent contrat. Toute installation doit être terminée quinze minutes avant l’ouverture au public. Tout manquement grave pourra entraîner l’exclusion immédiate sans remboursement. Les animaux même tenus en laisse ne sont pas acceptés dans le complexe. Pas de possibilité de restauration sur place — prévoir votre lunch box. Un café d’accueil sera offert le matin.</p>
+        </div>
+        <div class="article-block">
+          <h4>Article 5 — Conférences et ateliers</h4>
+          <p>Les créneaux de conférence et d’atelier sont inclus dans l’emplacement et attribués par ordre d’inscription. Samedi : 6 créneaux disponibles (10h30, 11h30, 13h30, 14h30, 15h30, 16h30). Dimanche : 5 créneaux disponibles (10h30, 11h30, 13h30, 14h30, 15h30). L’Organisatrice se réserve le droit de refuser un sujet incompatible avec la thématique du salon. Chaque créneau est d’une durée d’une heure.</p>
+        </div>
+        <div class="article-block">
+          <h4>Article 6 — Distribution de flyers</h4>
+          <p>L’option de distribution de flyers (57 €) est réservée aux professionnels ne souhaitant pas exposer. Les flyers sont à déposer au Parc des Expositions de Brest le vendredi 13 novembre 2026, ou à expédier à vos frais à la domiciliation de l’Organisatrice : Lili Karantez®, Centre des Affaires Lorient La Base, 1 rue Étienne d’Orves, 56100 Lorient. L’Organisatrice décline toute responsabilité en cas de non-distribution due à un envoi tardif.</p>
+        </div>
+        <div class="article-block">
+          <h4>Article 7 — Obligations de l’Organisatrice</h4>
+          <p>L’Organisatrice s’engage à mettre à disposition l’espace convenu et à assurer la bonne tenue du salon. Elle s’engage à respecter les normes de sécurité applicables au site et à avoir souscrit une assurance couvrant l’organisation de l’événement. L’Organisatrice mettra en œuvre toutes les actions de communication et de promotion de l’événement afin de favoriser la visibilité des Exposants. Toutefois, l’Organisatrice ne peut garantir le nombre de visiteurs et ne pourra en aucun cas être tenue responsable de la fréquentation effective. En conséquence, aucun remboursement, total ou partiel, ne pourra être demandé par l’Exposant en cas de faible affluence ou de participation inférieure à ses attentes. Un programme d’animations sera fixé mais pourra faire l’objet de modifications de dernière minute selon les besoins d’organisation. L’Organisatrice s’engage à ne prendre aucun frais sur la vente des prestations des Exposants.</p>
+        </div>
+        <div class="article-block">
+          <h4>Article 8 — Annulation</h4>
+          <p>Avant le 01/09/2026 : remboursement à 50% du montant réglé, sur justificatif médical uniquement. Autre cause non recevable. Après le 01/09/2026 : règlement encaissé intégralement. Sur justificatif médical la semaine précédant l’événement : remboursement à hauteur de 30%. Non-venue le jour J : aucun remboursement. Si le seuil minimum d’exposants n’est pas atteint, l’Organisatrice se réserve le droit d’annuler avec remboursement intégral.</p>
+        </div>
+        <div class="article-block">
+          <h4>Article 9 — Responsabilité et assurance</h4>
+          <p>L’Exposant est responsable de son matériel, de ses produits et des personnes sur son stand. L’Organisatrice décline toute responsabilité en cas de perte, vol ou dégradation. Merci de transmettre votre copie d’assurance responsabilité civile professionnelle à lilikarantez@gmail.com avant le salon.</p>
+        </div>
+        <div class="article-block">
+          <h4>Article 10 — Droit à l’image &amp; RGPD</h4>
+          <p>Autorisation de diffusion photos et vidéos dans le cadre du Salon et pour sa promotion. Les données personnelles collectées (nom, coordonnées, activité) sont utilisées uniquement pour la gestion de l’événement et ne sont pas transmises à des tiers. Conservation maximale : 1 an. Droit d’accès, rectification et suppression sur demande écrite. Vos données nous sont confiées. Elles ne seront jamais vendues, jamais partagées.</p>
+        </div>
+        <div class="article-block">
+          <h4>Article 11 — Litiges</h4>
+          <p>Tout différend fera l’objet d’une tentative de règlement amiable. À défaut, les tribunaux compétents du ressort du siège de l’Organisatrice seront saisis (Tribunal de Lorient).</p>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="checkbox-field">
+        <input type="checkbox" id="lu_approuve" name="lu_approuve" value="oui">
+        <label for="lu_approuve">J’ai lu et j’accepte l’intégralité du contrat d’engagement ci-dessus. Je m’engage sur l’honneur à respecter l’ensemble des conditions.</label>
+      </div>
+      <div id="fg-lu" style="display:none;"><div class="error-msg" style="display:block;color:var(--fuchsia);font-size:0.78rem;margin-bottom:12px;">→ Vous devez accepter les conditions</div></div>
+
+      <div class="field-group" style="margin-top:20px;">
+        <label>Autorisation droit à l’image <span class="req">*</span></label>
+        <div class="radio-inline" id="image-group">
+          <label class="radio-opt" id="ropt-img-oui"><input type="radio" name="image_accord" value="Oui"> Oui</label>
+          <label class="radio-opt" id="ropt-img-non"><input type="radio" name="image_accord" value="Non"> Non</label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label>Mode de paiement souhaité <span class="req">*</span></label>
+        <div class="radio-inline" id="paiement-group">
+          <label class="radio-opt" id="ropt-wero"><input type="radio" name="paiement" value="Wero"> Wero</label>
+          <label class="radio-opt" id="ropt-cheque"><input type="radio" name="paiement" value="Chèque"> Chèque</label>
+          <label class="radio-opt" id="ropt-virement"><input type="radio" name="paiement" value="Virement"> Virement</label>
+          <label class="radio-opt" id="ropt-2fois"><input type="radio" name="paiement" value="Paiement en 2 fois"> En 2 fois <span style="font-size:0.7rem;color:#aaa;margin-left:4px;">(facultatif)</span></label>
+        </div>
+        <div id="paiement-info" style="display:none;margin-top:16px;padding:16px 20px;border-radius:6px;font-size:0.84rem;line-height:1.7;"></div>
+      </div>
+
+      <div class="btn-nav">
+        <button type="button" class="btn btn-secondary" id="btn-back2">&larr; Retour</button>
+        <button type="button" class="btn btn-primary" id="btn-step3">Suivant &rarr;</button>
+      </div>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="section" id="section-4">
+      <div class="section-header">
+        <h2>Votre <span>signature</span></h2>
+        <p>Signez dans l’espace ci-dessous pour valider et soumettre votre contrat d’engagement.</p>
+      </div>
+
+      <div class="info-tag">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Fait à Lorient — contrat en deux exemplaires. Un exemplaire vous sera transmis par email.
+      </div>
+
+      <div class="field-group">
+        <label>Lieu et date de signature <span class="req">*</span></label>
+        <input type="text" name="lieu_date" id="lieu_date" placeholder="Ex. : Brest, le 15 juin 2026">
+      </div>
+
+      <label>Signature <span class="req">*</span></label>
+      <div class="sig-wrapper">
+        <canvas id="sigCanvas" width="720" height="160"></canvas>
+        <span class="sig-clear" id="sigClearBtn">Effacer</span>
+      </div>
+      <div class="sig-hint">Signez avec votre souris ou votre doigt, précédée de la mention « Lu et approuvé »</div>
+      <div id="sig-error" style="color:var(--fuchsia);font-size:0.78rem;margin-bottom:12px;display:none;">→ La signature est obligatoire</div>
+      <input type="hidden" name="signature_image" id="sigData">
+
+      <div class="checkbox-field">
+        <input type="checkbox" id="assurance" name="assurance" value="oui">
+        <label for="assurance">Je m’engage à fournir une attestation de responsabilité civile professionnelle valide à la date du salon.</label>
+      </div>
+      <div id="fg-assurance" style="display:none;"><div class="error-msg" style="display:block;color:var(--fuchsia);font-size:0.78rem;margin-bottom:12px;">→ Engagement obligatoire</div></div>
+
+      <div class="checkbox-field">
+        <input type="checkbox" id="photo_ok" name="photo_ok" value="oui">
+        <label for="photo_ok">Je transmettrai une photo libre de droit au format portrait (numérique) à l’organisation avant le salon.</label>
+      </div>
+
+      <div class="btn-nav">
+        <button type="button" class="btn btn-secondary" id="btn-back3">&larr; Retour</button>
+        <button type="submit" class="btn btn-primary" id="submitBtn">Envoyer mon contrat &rarr;</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="success-screen" id="successScreen">
+    <div class="success-icon">♥</div>
+    <h2>Contrat bien reçu !</h2>
+    <p>Merci pour votre inscription au Salon de la Rencontre Célibataire.<br>
+    Vous recevrez une confirmation par email sous 48h.<br><br>
+    <em style="color:#999;font-size:0.8rem;">Les Cœurs Solitaires — Brest Expo — 14 &amp; 15 novembre 2026</em></p>
   </div>
-</section>
 
-<!-- PROGRAMME -->
-<section class="programme" id="programme">
-  <div class="container">
-    <div class="section-label">Programme</div>
-    <h2 class="section-title">Le week-end<br><em>en un coup d'oeil</em></h2>
-    <div class="prog-cols">
-      <div>
-        <div class="prog-day-label">&#128197; Samedi 14 novembre</div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-time">08h30</div>
-            <div class="timeline-title">Montage des stands</div>
-            <div class="timeline-desc">Accueil des exposants, installation, badge et petit-déjeuner d'accueil offert.</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-time">10h00</div>
-            <div class="timeline-title">Ouverture du salon</div>
-            <div class="timeline-desc">Les portes ouvrent au public.</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-time">10h30 &mdash; 16h30</div>
-            <div class="timeline-title">Conférences &amp; ateliers</div>
-            <div class="timeline-desc">6 créneaux d'1 heure. Attribution par ordre d'inscription.</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-time">18h00</div>
-            <div class="timeline-title">Fermeture du salon</div>
-            <div class="timeline-desc">Fin d'accueil du public. Les exposants restent jusqu'à la fermeture.</div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="prog-day-label" style="color: var(--turquoise);">&#128197; Dimanche 15 novembre</div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-time">09h30</div>
-            <div class="timeline-title">Ouverture exposants</div>
-            <div class="timeline-desc">Remise en place et petit-déjeuner d'accueil offert.</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-time">10h00</div>
-            <div class="timeline-title">Ouverture du salon</div>
-            <div class="timeline-desc">Deuxième journée ouverte au public.</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-time">10h30 &mdash; 15h30</div>
-            <div class="timeline-title">Conférences &amp; ateliers</div>
-            <div class="timeline-desc">5 créneaux d'1 heure. Attribution par ordre d'inscription.</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-time">17h00</div>
-            <div class="timeline-title">Fermeture du salon</div>
-            <div class="timeline-desc">Démontage des stands. L'équipe reste disponible pour échanger.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="margin-top:32px;padding:16px 22px;background:rgba(0,188,212,0.06);border:1px solid rgba(0,188,212,0.2);border-radius:6px;font-size:0.82rem;color:#555;line-height:1.7;">
-      <strong style="color:var(--turquoise);">Programme d'animation</strong> en cours d'élaboration. Ateliers de rencontre thématiques prévus tout au long du week-end.
-    </div>
-  </div>
-</section>
-
-<!-- CONFERENCES -->
-<section class="conferences" id="conferences">
-  <div class="container">
-    <div class="section-label">Conférences &amp; ateliers</div>
-    <h2 class="section-title">Vos créneaux<br><em>pour prendre la parole</em></h2>
-    <p class="section-lead">11 créneaux d'1 heure répartis sur les deux journées. Attribution strictement par ordre d'inscription.</p>
-    <div class="conf-grid">
-      <div class="conf-day">
-        <div class="conf-day-head">Samedi 14 novembre &mdash; 6 créneaux</div>
-        <div class="conf-slots">
-          <div class="conf-slot">
-            <div class="conf-time">10h30</div>
-            <div class="conf-label">Atelier ou conférence</div>
-            <div class="conf-avail">Disponible</div>
-          </div>
-          <div class="conf-slot">
-            <div class="conf-time">11h30</div>
-            <div class="conf-label">Atelier ou conférence</div>
-            <div class="conf-avail">Disponible</div>
-          </div>
-          <div class="conf-slot">
-            <div class="conf-time">13h30</div>
-            <div class="conf-label">Atelier ou conférence</div>
-            <div class="conf-avail">Disponible</div>
-          </div>
-          <div class="conf-slot">
-            <div class="conf-time">14h30</div>
-            <div class="conf-label">Atelier ou conférence</div>
-            <div class="conf-avail">Disponible</div>
-          </div>
-          <div class="conf-slot">
-            <div class="conf-time">15h30</div>
-            <div class="conf-label">Atelier ou conférence</div>
-            <div class="conf-avail">Disponible</div>
-          </div>
-          <div class="conf-slot">
-            <div class="conf-time">16h30</div>
-            <div class="conf-label">Atelier ou conférence</div>
-            <div class="conf-avail">Disponible</div>
-          </div>
-        </div>
-      </div>
-      <div class="conf-day">
-        <div class="conf-day-head dark">Dimanche 15 novembre &mdash; 5 créneaux</div>
-        <div class="conf-slots">
-          <div class="conf-slot">
-            <div class="conf-time">10h30</div>
-            <div class="conf-label">Atelier ou conférence</div>
-            <div class="conf-avail">Disponible</div>
-          </div>
-          <div class="conf-slot">
-            <div class="conf-time">11h30</div>
-            <div class="conf-label">Atelier ou conférence</div>
-            <div class="conf-avail">Disponible</div>
-          </div>
-          <div class="conf-slot">
-            <div class="conf-time">13h30</div>
-            <div class="conf-label">Atelier ou conférence</div>
-            <div class="conf-avail">Disponible</div>
-          </div>
-          <div class="conf-slot">
-            <div class="conf-time">14h30</div>
-            <div class="conf-label">Atelier ou conférence</div>
-            <div class="conf-avail">Disponible</div>
-          </div>
-          <div class="conf-slot">
-            <div class="conf-time">15h30</div>
-            <div class="conf-label">Atelier ou conférence</div>
-            <div class="conf-avail">Disponible</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p class="conf-note">Les créneaux sont attribués par ordre d'inscription. Conférence ou atelier inclus dans votre emplacement, sans supplément. Premiers arrivés, premiers servis.</p>
-  </div>
-</section>
-
-<!-- TARIFS -->
-<section class="tarifs" id="tarifs">
-  <div class="container">
-    <div class="section-label">Tarifs</div>
-    <h2 class="section-title">Des formules<br><em>claires et sans surprise</em></h2>
-    <p class="section-lead">TVA non applicable, article 293 B du CGI. Aucune commission sur vos ventes. Petit-déjeuner d'accueil offert les deux jours.</p>
-
-    <table class="tarif-table">
-      <thead>
-        <tr>
-          <th>Emplacement</th>
-          <th>Détail</th>
-          <th>Tarif</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <strong>Emplacement nu</strong>
-            <div class="tarif-sub">Sans table, sans électricité</div>
-          </td>
-          <td style="color:#555;font-size:0.82rem;">Vous apportez votre propre matériel et mobilier.</td>
-          <td><span class="tarif-price">197&nbsp;&euro;</span></td>
-        </tr>
-        <tr>
-          <td>
-            <strong>Emplacement avec électricité</strong>
-            <div class="tarif-sub">Sans table, avec branchement électrique</div>
-          </td>
-          <td style="color:#555;font-size:0.82rem;">1 branchement électrique inclus. Vous apportez votre mobilier.</td>
-          <td><span class="tarif-price">227&nbsp;&euro;</span></td>
-        </tr>
-        <tr>
-          <td>
-            <strong>Emplacement équipé</strong>
-            <div class="tarif-sub">Avec table, sans électricité</div>
-          </td>
-          <td style="color:#555;font-size:0.82rem;">1 table 2 mètres + 2 chaises fournis.</td>
-          <td><span class="tarif-price">247&nbsp;&euro;</span></td>
-        </tr>
-        <tr>
-          <td>
-            <strong>Emplacement intégral</strong>
-            <div class="tarif-sub">Avec table et électricité</div>
-          </td>
-          <td style="color:#555;font-size:0.82rem;">1 table 2 mètres + 2 chaises + 1 branchement électrique.</td>
-          <td><span class="tarif-price">277&nbsp;&euro;</span></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="conf-tarif">
-      <div class="conf-tarif-head">
-        <h3>Conférence ou Atelier (1h)</h3>
-        <div class="price">Inclus</div>
-      </div>
-      <div class="conf-tarif-body">
-        Créneau d'1 heure dans la salle dédiée. Équipement audio-visuel fourni par Brest Expo. 11 créneaux disponibles sur les deux journées. Premiers arrivés, premiers servis.
-      </div>
-    </div>
-
-    <p class="tarif-tva">TVA non applicable, article 293 B du CGI.</p>
-    <div class="tarif-annulation">
-      <strong style="color:var(--violet);">Important :</strong> aucun emplacement n'est bloqué sans paiement. Maximum 30 exposants professionnels. Les places sont attribuées par ordre de réception du contrat signé et du règlement.
-    </div>
-    <div style="margin-top:20px;padding:20px 24px;background:white;border:1px solid var(--border);border-radius:8px;">
-      <div style="font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--violet);margin-bottom:16px;">Modes de paiement acceptés</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
-        <div style="display:flex;align-items:center;gap:10px;font-size:0.84rem;color:#555;">
-          <span style="font-size:1.2rem;">📲</span>
-          <span>Wero</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:0.84rem;color:#555;">
-          <span style="font-size:1.2rem;">📄</span>
-          <span>Chèque à l'ordre de Lili Karantez</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:0.84rem;color:#888;font-style:italic;">
-          <span style="font-size:1.2rem;">🏦</span>
-          <span>Virement bancaire — RIB sur demande</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:0.84rem;color:#888;font-style:italic;">
-          <span style="font-size:1.2rem;">🗓️</span>
-          <span>Paiement en 2 fois — modalités à confirmer</span>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:20px;background:linear-gradient(90deg,rgba(155,89,182,0.06),rgba(233,30,140,0.04));border:1px solid var(--border);border-radius:8px;overflow:hidden;">
-      <div style="background:linear-gradient(90deg,#1a1a2e,#2d1b4e);padding:14px 24px;display:flex;justify-content:space-between;align-items:center;">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:white;font-weight:400;">Distribution de flyers</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#e8c5f5;font-weight:300;">57&nbsp;&euro;</div>
-      </div>
-      <div style="padding:16px 24px;font-size:0.82rem;color:#555;line-height:1.8;">
-        Offre réservée aux professionnels ne souhaitant pas exposer. Vos flyers sont glissés dans les 400 pochettes d'accueil remises aux visiteurs à l'entrée du salon.<br>
-        <strong style="color:var(--ink);">Dépôt :</strong> vendredi 13 novembre au Parc des Expositions, ou expédition à vos frais à la domiciliation de Lili Karantez<sup>®</sup> — Centre des Affaires Lorient La Base, 1 rue Étienne d'Orves, 56100 Lorient.
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- LIEU -->
-<section class="lieu" id="lieu">
-  <div class="container">
-    <div class="section-label">Le lieu</div>
-    <h2 class="section-title">Brest Expo,<br><em>Parc de Penfeld</em></h2>
-    <div class="lieu-grid">
-      <div class="lieu-info">
-        <div class="lieu-detail">
-          <div class="lieu-detail-icon">&#128205;</div>
-          <div class="lieu-detail-text">
-            <strong>Adresse</strong>
-            <span>Route de Brest<br>29820 Guilers<br>Parc de Penfeld</span>
-          </div>
-        </div>
-        <div class="lieu-detail">
-          <div class="lieu-detail-icon">&#128336;</div>
-          <div class="lieu-detail-text">
-            <strong>Horaires</strong>
-            <span>Samedi 14 novembre : 10h00 à 18h00<br>Dimanche 15 novembre : 10h00 à 17h00<br>Montage dès 8h30 le samedi</span>
-          </div>
-        </div>
-        <div class="lieu-detail">
-          <div class="lieu-detail-icon">&#128151;</div>
-          <div class="lieu-detail-text">
-            <strong>Stationnement</strong>
-            <span>Parking gratuit sur place<br>Accès facilité pour le déchargement</span>
-          </div>
-        </div>
-        <div class="lieu-detail">
-          <div class="lieu-detail-icon">&#127968;</div>
-          <div class="lieu-detail-text">
-            <strong>Infrastructures</strong>
-            <span>Parc d'expositions professionnel<br>Espaces modulables, accès PMR</span>
-          </div>
-        </div>
-        <div style="margin-top:6px;">
-          <a href="https://www.brest-expo.fr/" target="_blank" style="font-size:0.78rem;color:var(--turquoise);text-decoration:none;letter-spacing:0.1em;">brest-expo.fr &rarr;</a>
-        </div>
-      </div>
-      <div class="lieu-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.847!2d-4.5189!3d48.3972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4816bc1512b0d041%3A0x30dbf2e61e0dfd6a!2sParc%20des%20expositions%20de%20Penfeld!5e0!3m2!1sfr!2sfr!4v1711900000000!5m2!1sfr!2sfr" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- LILI -->
-<section class="lili-section" id="lili">
-  <div class="container">
-    <div class="section-label">L'organisatrice</div>
-    <h2 class="section-title">Lili Karantez,<br><em>créatrice du concept</em></h2>
-    <div class="lili-grid">
-      <div class="lili-avatar">L</div>
-      <div class="lili-text">
-        <p>Lili Karantez est entrepreneure, auteure et éditrice spécialisée dans les dynamiques amoureuses contemporaines. Fondatrice du concept <em>Cœurs Solitaires</em>, elle imagine et organise depuis 2024 des événements de rencontres à forte dimension humaine dans le Grand Ouest.</p>
-        <p>Son approche repose sur une conviction forte : <em>&laquo;&nbsp;La rencontre mérite un cadre, une intention et une mise en scène subtile.&nbsp;&raquo;</em> Elle anime des communautés Facebook actives (2 500+ membres en Bretagne et Pays de la Loire) et publie le magazine <em>Cœurs Solitaires</em>.</p>
-        <p>Auteure de <em>&laquo;&nbsp;Juste un Amusement&nbsp;&raquo;</em> (2022) et <em>&laquo;&nbsp;Chroniques de Vies Entrelacées&nbsp;&raquo;</em> (2025), elle porte une écriture sensible à la croisée de l'analyse sociale et du récit émotionnel.</p>
-        <div class="lili-tags">
-          <span class="lili-tag">Entrepreneure</span>
-          <span class="lili-tag">Auteure</span>
-          <span class="lili-tag">Éditrice</span>
-          <span class="lili-tag">Créatrice d'événements</span>
-          <span class="lili-tag">Grand Ouest</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA FINAL -->
-<div class="cta-final">
-  <h2>Prêt·e à rejoindre<br><em>l'aventure&nbsp;?</em></h2>
-  <p>30 emplacements seulement. Les places partent vite.<br>Complétez votre contrat d'engagement dès maintenant.</p>
-  <a href="https://lilikarantez.github.io/contrat-salon-brest/" class="btn-main">Je réserve mon emplacement</a>
 </div>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-brand">Lili Karantez® &mdash; Les Cœurs Solitaires</div>
-  <div class="footer-info">
-    Centre des Affaires Lorient La Base &mdash; 1 rue Étienne d'Orves &mdash; 56100 Lorient<br>
-    lilikarantez@gmail.com &nbsp;&middot;&nbsp; SIRET 40149331700069
+<script>
+(function() {
+  var tarifStand = 0;
+  var flyerActif = false;
+  var confActif = false;
+  var sigDrawing = false;
+  var sigHasContent = false;
+
+  function goToStep(n) {
+    if (n > 1 && !validateStep(n - 1)) return;
+    for (var i = 1; i <= 4; i++) {
+      document.getElementById('section-' + i).classList.toggle('active', i === n);
+      var tab = document.getElementById('tab-' + i);
+      tab.classList.toggle('active', i === n);
+      tab.classList.toggle('done', i < n);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function validateStep(n) {
+    if (n === 1) {
+      var ok = true;
+      var fields = [
+        { id: 'fg-nom', name: 'nom', type: 'text' },
+        { id: 'fg-prenom', name: 'prenom', type: 'text' },
+        { id: 'fg-adresse', name: 'adresse', type: 'text' },
+        { id: 'fg-telephone', name: 'telephone', type: 'text' },
+        { id: 'fg-email', name: 'email', type: 'email' },
+        { id: 'fg-siret', name: 'siret', type: 'text' },
+        { id: 'fg-activite', name: 'activite', type: 'text' }
+      ];
+      fields.forEach(function(f) {
+        var fg = document.getElementById(f.id);
+        var el = document.querySelector('[name=' + f.name + ']');
+        var val = el.value.trim();
+        var valid = val.length > 0;
+        if (f.type === 'email') valid = val.length > 0 && val.includes('@');
+        fg.classList.toggle('field-error', !valid);
+        if (!valid) ok = false;
+      });
+      return ok;
+    }
+    if (n === 2) {
+      if (tarifStand === 0 && !flyerActif) {
+        document.getElementById('fg-tarif-stand').style.display = 'block';
+        return false;
+      }
+      document.getElementById('fg-tarif-stand').style.display = 'none';
+      return true;
+    }
+    if (n === 3) {
+      var lu = document.getElementById('lu_approuve');
+      if (!lu.checked) {
+        document.getElementById('fg-lu').style.display = 'block';
+        return false;
+      }
+      document.getElementById('fg-lu').style.display = 'none';
+      return true;
+    }
+    return true;
+  }
+
+  function updateTotal() {
+    var total = tarifStand + (flyerActif ? 57 : 0);
+    document.getElementById('totalDisplay').innerHTML = total + ' <span>€</span>';
+    document.getElementById('totalInput').value = total + ' EUR';
+  }
+
+  document.querySelectorAll('.tarif-option').forEach(function(opt) {
+    opt.addEventListener('click', function() {
+      document.querySelectorAll('.tarif-option').forEach(function(o) { o.classList.remove('selected'); });
+      opt.classList.add('selected');
+      tarifStand = parseInt(opt.querySelector('input').value);
+      updateTotal();
+      document.getElementById('fg-tarif-stand').style.display = 'none';
+    });
+  });
+
+  var flyerToggle = document.getElementById('flyerToggle');
+  flyerToggle.addEventListener('click', function() {
+    flyerActif = !flyerActif;
+    flyerToggle.classList.toggle('active', flyerActif);
+    var sw = document.getElementById('flyerSwitch');
+    sw.style.background = flyerActif ? '#00897B' : '';
+    if (flyerActif) sw.style.cssText += ';'; 
+    document.getElementById('flyerInput').value = flyerActif ? 'oui' : 'non';
+    updateTotal();
+  });
+
+  var confToggle = document.getElementById('confToggle');
+  confToggle.addEventListener('click', function() {
+    confActif = !confActif;
+    confToggle.classList.toggle('active', confActif);
+    document.getElementById('confExtra').classList.toggle('visible', confActif);
+  });
+
+
+
+  document.getElementById('ropt-sam').addEventListener('click', function() {
+    document.getElementById('ropt-sam').classList.add('selected');
+    document.getElementById('ropt-dim').classList.remove('selected');
+    document.getElementById('ropt-sam').querySelector('input').checked = true;
+    document.getElementById('fg-creneau-sam').style.display = 'block';
+    document.getElementById('fg-creneau-dim').style.display = 'none';
+  });
+  document.getElementById('ropt-dim').addEventListener('click', function() {
+    document.getElementById('ropt-dim').classList.add('selected');
+    document.getElementById('ropt-sam').classList.remove('selected');
+    document.getElementById('ropt-dim').querySelector('input').checked = true;
+    document.getElementById('fg-creneau-dim').style.display = 'block';
+    document.getElementById('fg-creneau-sam').style.display = 'none';
+  });
+
+  ['ropt-img-oui','ropt-img-non'].forEach(function(id) {
+    document.getElementById(id).addEventListener('click', function() {
+      ['ropt-img-oui','ropt-img-non'].forEach(function(i) { document.getElementById(i).classList.remove('selected'); });
+      document.getElementById(id).classList.add('selected');
+      document.getElementById(id).querySelector('input').checked = true;
+    });
+  });
+
+  var paiementInfos = {
+    'ropt-wero': {
+      bg: '#f0fdf4', border: '#86efac', color: '#166534',
+      html: '<strong>Wero</strong><br>Envoyez votre paiement au numéro : <strong>06 33 05 44 56</strong> (Lili Karantez).<br>Indiquez votre nom et « Salon Brest 2026 » en référence.'
+    },
+    'ropt-cheque': {
+      bg: '#faf5ff', border: '#d4b8e8', color: '#5b21b6',
+      html: '<strong>Chèque</strong><br>Libellé à l’ordre de <strong>Lili Karantez</strong>.<br>A expédier à :<br>Lili Karantez<br>Centre des Affaires Lorient La Base<br>1 rue Etienne d’Orves<br>56100 Lorient'
+    },
+    'ropt-virement': {
+      bg: '#eff6ff', border: '#93c5fd', color: '#1d4ed8',
+      html: '<strong>Virement bancaire</strong><br>Demandez le RIB à Lili Karantez par email : lilikarantez@gmail.com<br>Merci de nous transmettre à cette même adresse vos : nom, prénom, ville et activité.'
+    },
+    'ropt-2fois': {
+      bg: '#fff7ed', border: '#fdba74', color: '#9a3412',
+      html: '<strong>Paiement en 2 fois</strong> <em>(facultatif)</em><br>Échéancier à convenir ensemble. Contactez Lili Karantez par email : lilikarantez@gmail.com pour convenir des modalités.'
+    }
+  };
+
+  ['ropt-wero','ropt-cheque','ropt-virement','ropt-2fois'].forEach(function(id) {
+    document.getElementById(id).addEventListener('click', function() {
+      ['ropt-wero','ropt-cheque','ropt-virement','ropt-2fois'].forEach(function(i) { document.getElementById(i).classList.remove('selected'); });
+      document.getElementById(id).classList.add('selected');
+      document.getElementById(id).querySelector('input').checked = true;
+      var info = paiementInfos[id];
+      var box = document.getElementById('paiement-info');
+      box.style.display = 'block';
+      box.style.background = info.bg;
+      box.style.border = '1px solid ' + info.border;
+      box.style.color = info.color;
+      box.innerHTML = info.html;
+    });
+  });
+
+  document.getElementById('btn-step1').addEventListener('click', function() { goToStep(2); });
+  document.getElementById('btn-step2').addEventListener('click', function() { goToStep(3); });
+  document.getElementById('btn-step3').addEventListener('click', function() { goToStep(4); });
+  document.getElementById('btn-back1').addEventListener('click', function() { goToStep(1); });
+  document.getElementById('btn-back2').addEventListener('click', function() { goToStep(2); });
+  document.getElementById('btn-back3').addEventListener('click', function() { goToStep(3); });
+
+  var canvas = document.getElementById('sigCanvas');
+  var ctx = canvas.getContext('2d');
+  ctx.strokeStyle = '#1a1a2e';
+  ctx.lineWidth = 2;
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+
+  function getPos(e) {
+    var r = canvas.getBoundingClientRect();
+    var src = e.touches ? e.touches[0] : e;
+    return { x: (src.clientX - r.left) * (canvas.width / r.width), y: (src.clientY - r.top) * (canvas.height / r.height) };
+  }
+
+  canvas.addEventListener('mousedown', function(e) { sigDrawing = true; var p = getPos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); });
+  canvas.addEventListener('mousemove', function(e) { if (!sigDrawing) return; var p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); sigHasContent = true; });
+  canvas.addEventListener('mouseup', function() { sigDrawing = false; });
+  canvas.addEventListener('mouseleave', function() { sigDrawing = false; });
+  canvas.addEventListener('touchstart', function(e) { e.preventDefault(); sigDrawing = true; var p = getPos(e); ctx.beginPath(); ctx.moveTo(p.x, p.y); }, { passive: false });
+  canvas.addEventListener('touchmove', function(e) { e.preventDefault(); if (!sigDrawing) return; var p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); sigHasContent = true; }, { passive: false });
+  canvas.addEventListener('touchend', function() { sigDrawing = false; });
+
+  document.getElementById('sigClearBtn').addEventListener('click', function() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    sigHasContent = false;
+    document.getElementById('sigData').value = '';
+  });
+
+  document.getElementById('mainForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var ok = true;
+    if (!sigHasContent) {
+      document.getElementById('sig-error').style.display = 'block';
+      ok = false;
+    } else {
+      document.getElementById('sig-error').style.display = 'none';
+      document.getElementById('sigData').value = canvas.toDataURL();
+    }
+    var ld = document.getElementById('lieu_date');
+    if (!ld.value.trim()) { ld.style.borderColor = 'var(--fuchsia)'; ok = false; }
+    else { ld.style.borderColor = ''; }
+    if (!document.getElementById('assurance').checked) {
+      document.getElementById('fg-assurance').style.display = 'block'; ok = false;
+    } else {
+      document.getElementById('fg-assurance').style.display = 'none';
+    }
+    if (!ok) return;
+    var btn = document.getElementById('submitBtn');
+    btn.textContent = 'Envoi en cours…';
+    btn.disabled = true;
+    fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(document.getElementById('mainForm')) })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (data.success) {
+          document.getElementById('mainForm').style.display = 'none';
+          document.querySelector('.steps').style.display = 'none';
+          document.getElementById('successScreen').classList.add('visible');
+        } else {
+          btn.textContent = 'Envoyer mon contrat →';
+          btn.disabled = false;
+          alert('Une erreur est survenue. Merci de réessayer.');
+        }
+      })
+      .catch(function() {
+        btn.textContent = 'Envoyer mon contrat →';
+        btn.disabled = false;
+        alert('Erreur réseau. Vérifie ta connexion et réessaie.');
+      });
+  });
+})();
+</script>
+
+<footer style="background:#1a1a2e;padding:32px 24px;text-align:center;margin-top:0;">
+  <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:#e8c5f5;margin-bottom:6px;letter-spacing:0.05em;">Lili Karantez<sup style="font-size:0.6em;vertical-align:super">®</sup> — Les Cœurs Solitaires</div>
+  <div style="font-size:0.75rem;color:rgba(250,250,250,0.55);line-height:1.8;letter-spacing:0.05em;">
+    Centre des Affaires Lorient La Base — 1 rue Étienne d’Orves — 56100 Lorient<br>
+    lilikarantez@gmail.com · SIRET 40149331700069<br>
+    <span style="color:rgba(250,250,250,0.35);font-size:0.7rem;">Les Cœurs Solitaires — La rencontre mérite mieux qu’un algorithme</span>
   </div>
-  <div class="footer-social">
-    <a href="https://www.facebook.com/lili.karantez.3?locale=fr_FR" target="_blank">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+  <div style="margin-top:18px;">
+    <a href="https://wa.me/33633054456" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:white;text-decoration:none;padding:10px 22px;border-radius:4px;font-family:'Bai Jamjuree',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Contacter par WhatsApp
+    </a>
+  </div>
+  <div style="margin-top:14px;display:flex;justify-content:center;gap:14px;">
+    <a href="https://www.facebook.com/lili.karantez.3?locale=fr_FR" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);color:rgba(250,250,250,0.7);text-decoration:none;padding:8px 18px;border-radius:4px;font-family:'Bai Jamjuree',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.12);">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
       Facebook
     </a>
-    <a href="https://www.instagram.com/lilikarantez/" target="_blank">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    <a href="https://www.instagram.com/lilikarantez/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);color:rgba(250,250,250,0.7);text-decoration:none;padding:8px 18px;border-radius:4px;font-family:'Bai Jamjuree',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.12);">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
       Instagram
     </a>
   </div>
-  <div class="footer-slogan">La rencontre mérite mieux qu'un algorithme.</div>
   <div style="margin-top:14px;font-size:0.68rem;color:rgba(250,250,250,0.2);">
     © 2026 Lili Karantez — Toute reproduction interdite, même partielle. SIRET 40149331700069
   </div>
 </footer>
 
-
-<!-- BULLE CONTACT -->
-<div class="contact-bubble">
-  <div class="contact-panel" id="contactPanel">
-    <div class="contact-panel-head">
-      <h4>Nous écrire</h4>
-      <button class="contact-close" id="contactClose" aria-label="Fermer">&times;</button>
-    </div>
-    <div class="contact-form" id="contactForm">
-      <form id="contactFormEl">
-        <input type="hidden" name="access_key" value="d42b8d9d-a52c-4888-a489-5dd59b1b0f5b">
-        <input type="hidden" name="subject" value="Message exposant — Salon Brest 2026">
-        <div class="contact-field">
-          <input type="text" name="nom" placeholder="Nom" required>
-        </div>
-        <div class="contact-field">
-          <input type="text" name="prenom" placeholder="Prénom" required>
-        </div>
-        <div class="contact-field">
-          <input type="text" name="ville" placeholder="Ville" required>
-        </div>
-        <div class="contact-field">
-          <input type="email" name="email" placeholder="Email" required>
-        </div>
-        <div class="contact-field">
-          <textarea name="message" placeholder="Votre message" required></textarea>
-        </div>
-        <button type="submit" class="contact-submit">Envoyer</button>
-        <p class="contact-rgpd">Vos données nous sont confiées. Elles ne seront jamais vendues, jamais partagées.</p>
-      </form>
-    </div>
-    <div class="contact-confirm" id="contactConfirm">
-      Merci, votre message a bien été envoyé&nbsp;!
-    </div>
-  </div>
-  <button class="contact-btn" id="contactBubbleBtn" aria-label="Nous contacter">✉</button>
-</div>
-
-<script>
-(function() {
-  var btn = document.getElementById('contactBubbleBtn');
-  var panel = document.getElementById('contactPanel');
-  var closeBtn = document.getElementById('contactClose');
-  var form = document.getElementById('contactFormEl');
-  var confirm = document.getElementById('contactConfirm');
-  var formWrap = document.getElementById('contactForm');
-
-  btn.addEventListener('click', function() {
-    panel.classList.toggle('open');
-  });
-
-  closeBtn.addEventListener('click', function() {
-    panel.classList.remove('open');
-  });
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var data = new FormData(form);
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: data
-    }).then(function(res) {
-      return res.json();
-    }).then(function(json) {
-      if (json.success) {
-        formWrap.style.display = 'none';
-        confirm.style.display = 'block';
-        setTimeout(function() {
-          panel.classList.remove('open');
-          formWrap.style.display = 'block';
-          confirm.style.display = 'none';
-          form.reset();
-        }, 3000);
-      }
-    });
-  });
-})();
-</script>
 </body>
 </html>
